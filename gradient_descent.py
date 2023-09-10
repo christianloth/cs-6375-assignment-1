@@ -7,13 +7,13 @@ def gradient_descent(X, y, learning_rate=0.01, num_iterations=1000):
 
     Args:
     - X (numpy.ndarray): The feature matrix (m x n), where m is the number of examples and n is the number of features.
-    - y (numpy.ndarray): The target vector (m x 1), where m is the number of examples.
+    - y (numpy.ndarray): The actual values vector (m x 1), where m is the number of examples.
     - learning_rate (float): The learning rate for gradient descent.
     - num_iterations (int): The number of iterations for gradient descent.
 
     Returns:
     - numpy.ndarray: The optimized parameters/coefficients for linear regression.
-    - list: The history of cost values for each iteration.
+    - list: The history of cost values for each iteration. This was added for debugging purposes.
     """
     m, n = X.shape
     theta = np.zeros((n, 1))

@@ -46,7 +46,9 @@ def preprocess():
 if __name__ == "__main__":
     X_train, y_train, X_test, y_test = preprocess()
 
-    # Problem 1
+
+
+    # -------------------- Problem 1 -------------------- #
     means = X_train.mean()
     std_devs = X_train.std()
 
@@ -57,33 +59,33 @@ if __name__ == "__main__":
     X_test_scaled = (X_test - means) / std_devs
 
     # Add a column of ones for the bias term
-    X_train_bias = np.c_[np.ones((X_train_scaled.shape[0], 1)), X_train_scaled]
-    X_test_bias = np.c_[np.ones((X_test_scaled.shape[0], 1)), X_test_scaled]
+    X_train_matrix_with_bias = np.c_[np.ones((X_train_scaled.shape[0], 1)), X_train_scaled]
+    X_test_matrix_with_bias = np.c_[np.ones((X_test_scaled.shape[0], 1)), X_test_scaled]
 
-    # Convert y_train and y_test to matrix form
+    # Convert y_train and y_test to ndarray
     y_train_matrix = y_train.values.reshape(-1, 1)
     y_test_matrix = y_test.values.reshape(-1, 1)
 
     # Train the model using gradient descent
-    theta, cost_history = gradient_descent(X_train_bias, y_train_matrix, learning_rate=0.01, num_iterations=1000)
+    theta, cost_history = gradient_descent(X_train_matrix_with_bias, y_train_matrix, learning_rate=0.01, num_iterations=1000)
 
     # Predict values for the test set
-    y_pred = predict(X_test_bias, theta)
+    y_pred = predict(X_test_matrix_with_bias, theta)
 
-    # Calculate R^2 score for the predictions
-    r2 = 1 - (np.sum(np.square(y_test_matrix - y_pred)) / np.sum(np.square(y_test_matrix - y_test_matrix.mean())))
-    print(r2)
     print("---------------------------- Problem 1 ----------------------------")
     print("Coefficients: ", ['{:.3f}'.format(i) for i in theta.flatten()[1:]])
     print("Bias: {:.3f}".format(theta[0][0]))
     print("MSE: {:.3f}".format(np.mean((y_pred - y_test_matrix) ** 2)))
-    print("R^2: {:.3f}".format(r2))
+    print("R^2: {:.3f}".format(1 - (np.sum(np.square(y_test_matrix - y_pred)) / np.sum(np.square(y_test_matrix - y_test_matrix.mean())))))
 
     print("\nPredicted Values: ", ['{:.3f}'.format(i) for i in y_pred.flatten()])
     print("Actual Values: ", ['{:.3f}'.format(i) for i in y_test_matrix.flatten()])
     print("-------------------------------------------------------------------")
+    # ------------------------------------------------------ #
 
-    # Problem 2
+
+
+    # -------------------- Problem 2 -------------------- #
     reg = linear_model.LinearRegression()
     reg.fit(X_train, y_train)
 
@@ -101,3 +103,4 @@ if __name__ == "__main__":
     print("\nPredicted Values: ", ['{:.3f}'.format(i) for i in y_pred])
     print("Actual Values: ", ['{:.3f}'.format(i) for i in y_test])
     print("-------------------------------------------------------------------")
+    # ------------------------------------------------------ #
