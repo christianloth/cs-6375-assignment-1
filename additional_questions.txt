@@ -1,2 +1,0 @@
-I am only somewhat satisfied that the package has found a solution here. The R^2 value is 0.624, which is not great, but it is better than nothing.
-There does seem to be a positive correlation though from looking at the data points.

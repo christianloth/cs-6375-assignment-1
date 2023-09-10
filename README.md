@@ -5,6 +5,7 @@ This is for the gradient descent assignment for CS6375 by Christian Loth.
 ## Requirements
 
 - Python 3.11 or higher
+- `pipenv` for managing dependencies and virtual environment. This is what I have chosen for my python virtual environment to manage dependencies.
 
 ## Libraries Used
 
