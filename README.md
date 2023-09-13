@@ -48,5 +48,6 @@ This will execute the code for both problems and generate the required outputs, 
 
 - The program will display various metrics such as the coefficients, bias, MSE, and R^2 for different configurations.
 - The program will generate and display plots for analyzing the performance of the gradient descent algorithm.
+   - Note that the program will output 2 different plots for part 1. You may have to close the first plot to see the second plot.
 - A `log.txt` file will be created in the root directory of the project that contains the log of the program execution.
   - I have included a `log.txt` file in the submission of me running `part1.py` and `part2.py`.
