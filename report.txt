@@ -1,1 +1,0 @@
-I am somewhat satisfied that the package has found the best solution here. The R^2 value is around 0.6 for different learning rates and numbers of iterations, so there is definitely some correlation shown. This seems to be consistent with what the website said for the R^2 value.

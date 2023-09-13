@@ -63,7 +63,7 @@ if __name__ == "__main__":
     # Scale the training data
     X_train_scaled = (X_train - means) / std_devs
 
-    # Scale the test data using the mean and standard deviation from the training set
+    # Scale the testing data
     X_test_scaled = (X_test - means) / std_devs
 
     # Add a column of ones for the bias term
@@ -105,6 +105,7 @@ if __name__ == "__main__":
             final_cost = cost_history[-1]
             results.append((learning_rate, num_iterations, final_cost, cost_history))
     # ------------------------------------------------------ #
+
 
 
 
@@ -161,7 +162,7 @@ if __name__ == "__main__":
 
         _, ni, _, cost_history = result_for_lr
 
-        plt.subplot(2, 3, i)  # Assuming 2 rows and 3 columns for 5 plots
+        plt.subplot(2, 3, i)  # 5 plots total
         plt.plot(range(len(cost_history)), [2 * ch for ch in cost_history])  # Multiplying by 2 to get MSE from cost
         plt.xlabel('Number of Iterations')
         plt.ylabel('Mean Squared Error (MSE)')
