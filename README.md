@@ -46,3 +46,4 @@ This will execute the code and generate the required outputs, logs, and plots.
 - The program will display various metrics such as the coefficients, bias, MSE, and R^2 for different configurations.
 - The program will generate and display plots for analyzing the performance of the gradient descent algorithm.
 - A `log.txt` file will be created in the root directory of the project that contains the log of the program execution.
+  - I have included a `log.txt` file in the submission. However, it will be overwritten if the program is run again.
